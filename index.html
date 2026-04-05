@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anh Tài | Bio VIP</title>
+  <title>Tài Nguyễn | Bio Pro Max</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,19 +17,20 @@
     }
 
     :root{
-      --bg-1:#050816;
-      --bg-2:#0b1020;
-      --bg-3:#111a33;
-      --line:rgba(255,255,255,.12);
+      --bg1:#040814;
+      --bg2:#0b1224;
+      --bg3:#121d38;
       --text:#ffffff;
-      --muted:rgba(255,255,255,.68);
+      --muted:rgba(255,255,255,.72);
+      --line:rgba(255,255,255,.11);
+      --card:rgba(255,255,255,.07);
+      --card2:rgba(255,255,255,.04);
       --blue:#38bdf8;
+      --cyan:#22d3ee;
       --violet:#8b5cf6;
       --pink:#ec4899;
-      --cyan:#22d3ee;
-      --card:rgba(255,255,255,.07);
-      --card-2:rgba(255,255,255,.045);
-      --shadow:0 20px 60px rgba(0,0,0,.38);
+      --gold:#f59e0b;
+      --shadow:0 18px 50px rgba(0,0,0,.38);
     }
 
     html{
@@ -37,14 +38,14 @@
     }
 
     body{
+      min-height:100vh;
       font-family:'Inter',sans-serif;
       color:var(--text);
-      min-height:100vh;
       background:
-        radial-gradient(circle at 15% 20%, rgba(56,189,248,.18), transparent 22%),
-        radial-gradient(circle at 85% 15%, rgba(139,92,246,.16), transparent 24%),
-        radial-gradient(circle at 50% 85%, rgba(236,72,153,.12), transparent 22%),
-        linear-gradient(145deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
+        radial-gradient(circle at 10% 10%, rgba(34,211,238,.18), transparent 22%),
+        radial-gradient(circle at 90% 12%, rgba(139,92,246,.18), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(236,72,153,.12), transparent 25%),
+        linear-gradient(145deg, var(--bg1) 0%, var(--bg2) 48%, var(--bg3) 100%);
       padding:20px 14px 40px;
       overflow-x:hidden;
       position:relative;
@@ -55,59 +56,63 @@
       position:fixed;
       inset:0;
       background:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size:30px 30px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,.55), transparent 95%);
+        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+      background-size:28px 28px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 95%);
       pointer-events:none;
+      z-index:0;
     }
 
     .wrap{
-      width:100%;
-      max-width:470px;
+      max-width:480px;
       margin:0 auto;
       position:relative;
       z-index:2;
     }
 
-    .glow{
+    .blur{
       position:absolute;
-      width:220px;
-      height:220px;
       border-radius:50%;
       filter:blur(60px);
       opacity:.35;
-      z-index:0;
       pointer-events:none;
+      z-index:0;
     }
 
-    .glow.one{
-      top:10px;
-      left:-40px;
+    .blur.one{
+      width:220px;
+      height:220px;
+      top:0;
+      left:-50px;
       background:rgba(34,211,238,.35);
     }
 
-    .glow.two{
-      top:260px;
-      right:-50px;
+    .blur.two{
+      width:240px;
+      height:240px;
+      top:280px;
+      right:-70px;
       background:rgba(139,92,246,.35);
     }
 
-    .glow.three{
+    .blur.three{
+      width:200px;
+      height:200px;
       bottom:120px;
-      left:20%;
+      left:25%;
       background:rgba(236,72,153,.25);
     }
 
     .hero{
       position:relative;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.12);
-      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:28px 20px 22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05));
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
-      border-radius:30px;
-      padding:28px 20px 24px;
       box-shadow:var(--shadow);
     }
 
@@ -115,113 +120,110 @@
       content:"";
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(135deg, rgba(56,189,248,.15), transparent 30%, transparent 70%, rgba(139,92,246,.18));
+      background:linear-gradient(135deg, rgba(56,189,248,.12), transparent 35%, transparent 70%, rgba(236,72,153,.10));
       pointer-events:none;
     }
 
-    .top-badge{
+    .badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
       padding:8px 14px;
       border-radius:999px;
       background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.1);
-      color:#dbeafe;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 0 18px rgba(56,189,248,.12);
       font-size:12px;
-      font-weight:700;
-      letter-spacing:.8px;
+      font-weight:800;
       text-transform:uppercase;
-      box-shadow:0 0 22px rgba(56,189,248,.12);
+      letter-spacing:.9px;
+      color:#dbeafe;
       margin-bottom:18px;
     }
 
     .avatar{
-      width:96px;
-      height:96px;
-      border-radius:26px;
-      margin-bottom:18px;
+      width:98px;
+      height:98px;
+      border-radius:28px;
       display:flex;
       align-items:center;
       justify-content:center;
+      margin-bottom:18px;
       font-size:34px;
       font-weight:900;
       color:#fff;
-      background:
-        linear-gradient(135deg, rgba(56,189,248,.95), rgba(139,92,246,.95) 58%, rgba(236,72,153,.95));
-      border:1px solid rgba(255,255,255,.18);
+      background:linear-gradient(135deg, #22d3ee, #3b82f6 38%, #8b5cf6 68%, #ec4899);
+      border:1px solid rgba(255,255,255,.15);
       box-shadow:
         0 0 0 4px rgba(255,255,255,.04),
-        0 0 30px rgba(56,189,248,.25),
-        0 0 55px rgba(139,92,246,.18);
+        0 0 30px rgba(34,211,238,.18),
+        0 0 60px rgba(139,92,246,.16);
     }
 
     .name{
-      font-size:34px;
-      font-weight:900;
+      font-size:36px;
       line-height:1.05;
+      font-weight:900;
       letter-spacing:.2px;
       margin-bottom:10px;
-      text-shadow:0 0 18px rgba(56,189,248,.16);
+      text-shadow:0 0 18px rgba(56,189,248,.12);
     }
 
     .role{
       display:inline-block;
-      margin-bottom:16px;
-      font-size:14px;
-      font-weight:700;
-      color:#dbeafe;
       padding:8px 14px;
       border-radius:999px;
-      background:linear-gradient(135deg, rgba(56,189,248,.16), rgba(139,92,246,.16));
+      background:linear-gradient(135deg, rgba(56,189,248,.18), rgba(139,92,246,.16));
       border:1px solid rgba(255,255,255,.08);
+      color:#e0f2fe;
+      font-size:13px;
+      font-weight:700;
+      margin-bottom:16px;
     }
 
     .intro{
-      color:var(--muted);
       font-size:14px;
-      line-height:1.75;
-      margin-bottom:20px;
+      line-height:1.8;
+      color:var(--muted);
+      margin-bottom:18px;
     }
 
-    .mini-grid{
+    .stats{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:10px;
-      margin-top:6px;
+      margin-top:8px;
     }
 
-    .mini-box{
-      padding:12px 10px;
+    .stat{
       text-align:center;
+      padding:13px 10px;
       border-radius:18px;
+      border:1px solid rgba(255,255,255,.07);
       background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
     }
 
-    .mini-box strong{
+    .stat strong{
       display:block;
       font-size:16px;
       font-weight:800;
       margin-bottom:4px;
-      color:#fff;
     }
 
-    .mini-box span{
+    .stat span{
       font-size:12px;
-      color:rgba(255,255,255,.65);
+      color:rgba(255,255,255,.62);
     }
 
     .section{
       margin-top:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.035));
-      backdrop-filter:blur(15px);
-      -webkit-backdrop-filter:blur(15px);
+      border:1px solid var(--line);
       border-radius:28px;
       padding:18px 16px 14px;
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+      backdrop-filter:blur(15px);
+      -webkit-backdrop-filter:blur(15px);
       box-shadow:var(--shadow);
     }
 
@@ -229,40 +231,41 @@
       display:flex;
       align-items:center;
       gap:10px;
+      margin-bottom:14px;
       font-size:14px;
       font-weight:800;
-      letter-spacing:.9px;
+      letter-spacing:1px;
       text-transform:uppercase;
-      margin-bottom:14px;
       color:#f8fbff;
     }
 
     .section-title i{
-      width:28px;
-      height:28px;
+      width:30px;
+      height:30px;
+      border-radius:11px;
       display:flex;
       align-items:center;
       justify-content:center;
-      border-radius:10px;
-      background:linear-gradient(135deg, rgba(56,189,248,.18), rgba(139,92,246,.18));
+      background:linear-gradient(135deg, rgba(34,211,238,.18), rgba(139,92,246,.18));
       border:1px solid rgba(255,255,255,.08);
       color:#dbeafe;
+      box-shadow:0 0 18px rgba(56,189,248,.1);
       font-size:13px;
-      box-shadow:0 0 18px rgba(56,189,248,.12);
     }
 
     .about-box{
       border-radius:22px;
       padding:16px;
-      background:linear-gradient(135deg, rgba(56,189,248,.08), rgba(236,72,153,.06));
+      background:linear-gradient(135deg, rgba(34,211,238,.08), rgba(236,72,153,.06));
       border:1px solid rgba(255,255,255,.08);
       color:var(--muted);
       font-size:14px;
-      line-height:1.75;
+      line-height:1.8;
     }
 
     .link-card{
-      width:100%;
+      position:relative;
+      overflow:hidden;
       display:flex;
       align-items:center;
       gap:14px;
@@ -271,15 +274,12 @@
       padding:15px;
       margin:12px 0;
       border-radius:22px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
       border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.04),
-        0 10px 28px rgba(0,0,0,.22);
+        inset 0 1px 0 rgba(255,255,255,.03),
+        0 12px 28px rgba(0,0,0,.22);
       transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
-      position:relative;
-      overflow:hidden;
     }
 
     .link-card::before{
@@ -288,17 +288,17 @@
       inset:0;
       background:linear-gradient(120deg, transparent, rgba(255,255,255,.08), transparent);
       transform:translateX(-120%);
-      transition:transform .55s ease;
+      transition:transform .6s ease;
     }
 
     .link-card:hover{
       transform:translateY(-3px);
-      border-color:rgba(56,189,248,.28);
+      border-color:rgba(56,189,248,.24);
+      background:linear-gradient(135deg, rgba(34,211,238,.14), rgba(139,92,246,.12));
       box-shadow:
-        0 0 0 1px rgba(56,189,248,.08),
-        0 16px 34px rgba(0,0,0,.28),
-        0 0 28px rgba(56,189,248,.12);
-      background:linear-gradient(135deg, rgba(56,189,248,.14), rgba(139,92,246,.12));
+        0 0 0 1px rgba(56,189,248,.06),
+        0 18px 35px rgba(0,0,0,.28),
+        0 0 30px rgba(56,189,248,.12);
     }
 
     .link-card:hover::before{
@@ -306,20 +306,20 @@
     }
 
     .icon-box{
-      width:50px;
-      height:50px;
-      min-width:50px;
-      border-radius:16px;
+      width:52px;
+      height:52px;
+      min-width:52px;
+      border-radius:17px;
       display:flex;
       align-items:center;
       justify-content:center;
       font-size:19px;
       color:#fff;
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(135deg, rgba(56,189,248,.24), rgba(139,92,246,.25));
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(135deg, rgba(34,211,238,.22), rgba(139,92,246,.22));
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.05),
-        0 0 24px rgba(56,189,248,.10);
+        inset 0 1px 0 rgba(255,255,255,.04),
+        0 0 22px rgba(56,189,248,.10);
     }
 
     .content{
@@ -338,15 +338,15 @@
       display:block;
       font-size:13px;
       color:rgba(255,255,255,.68);
-      line-height:1.5;
+      line-height:1.55;
       word-break:break-word;
     }
 
     .go{
-      width:36px;
-      height:36px;
-      min-width:36px;
-      border-radius:12px;
+      width:38px;
+      height:38px;
+      min-width:38px;
+      border-radius:13px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -362,55 +362,58 @@
     }
 
     .service-item{
-      border-radius:20px;
-      padding:14px;
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
-      border:1px solid rgba(255,255,255,.08);
       display:flex;
       gap:12px;
       align-items:flex-start;
+      border-radius:21px;
+      padding:14px;
+      border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
     }
 
     .service-item i{
-      width:40px;
-      height:40px;
-      min-width:40px;
+      width:42px;
+      height:42px;
+      min-width:42px;
       border-radius:14px;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:linear-gradient(135deg, rgba(56,189,248,.20), rgba(139,92,246,.18));
+      background:linear-gradient(135deg, rgba(34,211,238,.18), rgba(245,158,11,.18));
       border:1px solid rgba(255,255,255,.08);
-      color:#dbeafe;
+      color:#fff;
       font-size:15px;
+      box-shadow:0 0 18px rgba(245,158,11,.08);
     }
 
     .service-item strong{
       display:block;
       font-size:15px;
-      margin-bottom:4px;
       font-weight:800;
+      margin-bottom:4px;
     }
 
     .service-item span{
+      display:block;
       font-size:13px;
-      line-height:1.6;
       color:rgba(255,255,255,.68);
+      line-height:1.65;
     }
 
     .footer{
       text-align:center;
       margin-top:18px;
-      color:rgba(255,255,255,.48);
       font-size:12px;
+      color:rgba(255,255,255,.48);
       letter-spacing:.3px;
     }
 
     @media (max-width:430px){
       .name{
-        font-size:30px;
+        font-size:31px;
       }
-      .mini-grid{
+
+      .stats{
         grid-template-columns:1fr;
       }
     }
@@ -418,55 +421,111 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="glow one"></div>
-    <div class="glow two"></div>
-    <div class="glow three"></div>
+    <div class="blur one"></div>
+    <div class="blur two"></div>
+    <div class="blur three"></div>
 
     <section class="hero">
-      <div class="top-badge">
-        <i class="fa-solid fa-bolt"></i>
-        Bio VIP Landing Page
+      <div class="badge">
+        <i class="fa-solid fa-crown"></i>
+        Bio Landing Pro Max
       </div>
 
-      <div class="avatar">AT</div>
+      <div class="avatar">TN</div>
 
-      <h1 class="name">ANH TÀI</h1>
-      <div class="role">Dịch vụ MXH đa nền tảng · Tài nguyên MMO · Hỗ trợ nhanh</div>
+      <h1 class="name">Tài Nguyễn</h1>
+      <div class="role">Dịch vụ MXH · Quảng cáo ADS · Tài nguyên MMO</div>
 
       <p class="intro">
-        Xin chào, mình là <strong>Anh Tài</strong>. Đây là landing page cá nhân dùng để kết nối nhanh
-        với khách hàng, đối tác và bạn bè. Mình tập trung vào các dịch vụ hỗ trợ mạng xã hội,
-        tài nguyên MMO và hệ sinh thái tiện ích online, hướng đến trải nghiệm nhanh, gọn, uy tín
-        và hỗ trợ trực tiếp qua nhiều kênh.
+        Xin chào, mình là <strong>Tài Nguyễn</strong>. Đây là landing page cá nhân dùng để giới thiệu
+        hệ thống website, dịch vụ mạng xã hội, quảng cáo ADS và các kênh liên hệ chính.
+        Mục tiêu là giúp khách hàng truy cập nhanh, dễ xem thông tin, dễ kết nối và làm việc chuyên nghiệp hơn.
       </p>
 
-      <div class="mini-grid">
-        <div class="mini-box">
+      <div class="stats">
+        <div class="stat">
           <strong>24/7</strong>
           <span>Hỗ trợ nhanh</span>
         </div>
-        <div class="mini-box">
-          <strong>MXH</strong>
-          <span>Dịch vụ đa nền tảng</span>
+        <div class="stat">
+          <strong>ADS</strong>
+          <span>Quảng cáo đa nền tảng</span>
         </div>
-        <div class="mini-box">
-          <strong>MMO</strong>
-          <span>Tài nguyên tiện ích</span>
+        <div class="stat">
+          <strong>VIP</strong>
+          <span>Landing hiện đại</span>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-title">
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-circle-info"></i>
         Giới thiệu
       </div>
 
       <div class="about-box">
-        Mình xây dựng các kênh và website theo hướng hiện đại, tối ưu trải nghiệm người dùng,
-        dễ truy cập trên điện thoại và phù hợp cho việc giới thiệu dịch vụ, chia sẻ liên hệ,
-        điều hướng khách về website chính. Nếu bạn cần kết nối nhanh, xem dịch vụ hoặc trao đổi
-        công việc, có thể bấm trực tiếp vào các mục bên dưới.
+        Mình phát triển hệ thống theo hướng hiện đại, tối ưu cho điện thoại và phù hợp để làm trang bio cá nhân,
+        trang điều hướng khách hàng và landing mini giới thiệu dịch vụ. Tại đây bạn có thể truy cập nhanh
+        vào các website chính, xem nhóm dịch vụ nổi bật và liên hệ trực tiếp qua Facebook, Telegram, Zalo hoặc số điện thoại.
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <i class="fa-solid fa-globe"></i>
+        Website chính
+      </div>
+
+      <a class="link-card" href="https://likefb68.com" target="_blank">
+        <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="content">
+          <span class="title">LikeFB68</span>
+          <span class="sub">Website dịch vụ mạng xã hội, hỗ trợ tăng tương tác và các tiện ích đa nền tảng</span>
+        </div>
+        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </a>
+
+      <a class="link-card" href="https://socialpro.vn" target="_blank">
+        <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
+        <div class="content">
+          <span class="title">SocialPro</span>
+          <span class="sub">Nền tảng tài nguyên MMO, tiện ích online và hệ sinh thái hỗ trợ người dùng</span>
+        </div>
+        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </a>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <i class="fa-solid fa-gem"></i>
+        Dịch vụ nổi bật
+      </div>
+
+      <div class="service-list">
+        <div class="service-item">
+          <i class="fa-solid fa-thumbs-up"></i>
+          <div>
+            <strong>Dịch vụ mạng xã hội</strong>
+            <span>Hỗ trợ tăng tương tác, like, follow, comment, view và nhiều hạng mục khác trên nhiều nền tảng phổ biến.</span>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <i class="fa-solid fa-bullhorn"></i>
+          <div>
+            <strong>Quảng cáo ADS</strong>
+            <span>Hỗ trợ triển khai quảng cáo, tối ưu hiển thị, tiếp cận khách hàng mục tiêu và xây dựng hiệu quả nhận diện thương hiệu.</span>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <i class="fa-solid fa-box-open"></i>
+          <div>
+            <strong>Tài nguyên MMO</strong>
+            <span>Cung cấp và chia sẻ các tiện ích, công cụ, tài nguyên hỗ trợ học tập, làm việc và phát triển hệ sinh thái online.</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -480,7 +539,7 @@
         <div class="icon-box"><i class="fa-brands fa-facebook-f"></i></div>
         <div class="content">
           <span class="title">Facebook</span>
-          <span class="sub">Kết nối qua trang cá nhân Facebook của Anh Tài</span>
+          <span class="sub">Kết nối trực tiếp qua trang cá nhân Facebook</span>
         </div>
         <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
       </a>
@@ -513,66 +572,8 @@
       </a>
     </section>
 
-    <section class="section">
-      <div class="section-title">
-        <i class="fa-solid fa-globe"></i>
-        Website chính
-      </div>
-
-      <a class="link-card" href="https://likefb68.com" target="_blank">
-        <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
-        <div class="content">
-          <span class="title">LikeFB68</span>
-          <span class="sub">Website dịch vụ mạng xã hội, hỗ trợ tăng tương tác đa nền tảng</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-      <a class="link-card" href="https://socialpro.vn" target="_blank">
-        <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
-        <div class="content">
-          <span class="title">SocialPro</span>
-          <span class="sub">Nền tảng tài nguyên MMO và các tiện ích online được chọn lọc</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-    </section>
-
-    <section class="section">
-      <div class="section-title">
-        <i class="fa-solid fa-gem"></i>
-        Điểm nổi bật
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <i class="fa-solid fa-shield-halved"></i>
-          <div>
-            <strong>Giao diện sang trọng, hiện đại</strong>
-            <span>Thiết kế theo phong cách neon/glow cao cấp, phù hợp làm bio cá nhân, landing giới thiệu và điều hướng khách hàng.</span>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <i class="fa-solid fa-bolt"></i>
-          <div>
-            <strong>Kết nối nhanh, thao tác gọn</strong>
-            <span>Tất cả thông tin liên hệ và website quan trọng được gom về một nơi để khách chỉ cần bấm là vào ngay.</span>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <i class="fa-solid fa-mobile-screen-button"></i>
-          <div>
-            <strong>Tối ưu cho điện thoại</strong>
-            <span>Hiển thị đẹp trên mobile, phù hợp để gắn vào Facebook bio, Telegram, Zalo hoặc chia sẻ trực tiếp cho khách.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <div class="footer">
-      © Anh Tài · Bio Landing VIP
+      © Tài Nguyễn · Bio Landing Pro Max
     </div>
   </div>
 </body>
