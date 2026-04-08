@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tài Nguyễn | Bio Pro Max</title>
+  <title>Tài Nguyễn | Giải pháp MXH, ADS & MMO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,20 +17,17 @@
     }
 
     :root{
-      --bg1:#040814;
-      --bg2:#0b1224;
-      --bg3:#121d38;
-      --text:#ffffff;
-      --muted:rgba(255,255,255,.72);
-      --line:rgba(255,255,255,.11);
-      --card:rgba(255,255,255,.07);
-      --card2:rgba(255,255,255,.04);
-      --blue:#38bdf8;
-      --cyan:#22d3ee;
-      --violet:#8b5cf6;
-      --pink:#ec4899;
-      --gold:#f59e0b;
-      --shadow:0 18px 50px rgba(0,0,0,.38);
+      --bg:#f6f8fc;
+      --surface:#ffffff;
+      --surface-2:#f9fbff;
+      --text:#0f172a;
+      --muted:#5b6475;
+      --line:#e5ebf4;
+      --primary:#2563eb;
+      --primary-dark:#1d4ed8;
+      --shadow:0 10px 30px rgba(15,23,42,.08);
+      --shadow-soft:0 4px 14px rgba(15,23,42,.05);
+      --radius:24px;
     }
 
     html{
@@ -38,550 +35,691 @@
     }
 
     body{
-      min-height:100vh;
       font-family:'Inter',sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.06), transparent 22%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 100%);
       color:var(--text);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(34,211,238,.18), transparent 22%),
-        radial-gradient(circle at 90% 12%, rgba(139,92,246,.18), transparent 24%),
-        radial-gradient(circle at 50% 100%, rgba(236,72,153,.12), transparent 25%),
-        linear-gradient(145deg, var(--bg1) 0%, var(--bg2) 48%, var(--bg3) 100%);
-      padding:20px 14px 40px;
-      overflow-x:hidden;
-      position:relative;
+      line-height:1.6;
     }
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background:
-        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
-      background-size:28px 28px;
-      mask-image:linear-gradient(to bottom, rgba(0,0,0,.7), transparent 95%);
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .wrap{
-      max-width:480px;
+    .container{
+      width:min(1120px, calc(100% - 28px));
       margin:0 auto;
-      position:relative;
-      z-index:2;
     }
 
-    .blur{
-      position:absolute;
-      border-radius:50%;
-      filter:blur(60px);
-      opacity:.35;
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .blur.one{
-      width:220px;
-      height:220px;
+    .topbar{
+      position:sticky;
       top:0;
-      left:-50px;
-      background:rgba(34,211,238,.35);
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(255,255,255,.85);
+      border-bottom:1px solid rgba(229,235,244,.85);
     }
 
-    .blur.two{
-      width:240px;
-      height:240px;
-      top:280px;
-      right:-70px;
-      background:rgba(139,92,246,.35);
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 0;
+      gap:16px;
     }
 
-    .blur.three{
-      width:200px;
-      height:200px;
-      bottom:120px;
-      left:25%;
-      background:rgba(236,72,153,.25);
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--text);
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .brand-logo{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:linear-gradient(135deg, #2563eb, #60a5fa);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .nav a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:600;
+      padding:10px 12px;
+      border-radius:12px;
+      transition:.2s ease;
+    }
+
+    .nav a:hover{
+      background:#eef4ff;
+      color:var(--primary);
     }
 
     .hero{
-      position:relative;
-      overflow:hidden;
+      padding:36px 0 24px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .hero-card,
+    .image-card,
+    .section-card{
+      background:var(--surface);
       border:1px solid var(--line);
-      border-radius:30px;
-      padding:22px 20px 22px;
-      background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.05));
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(135deg, rgba(56,189,248,.12), transparent 35%, transparent 70%, rgba(236,72,153,.10));
-      pointer-events:none;
+    .hero-card{
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
-    .badge{
+    .eyebrow{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:8px 14px;
+      width:max-content;
+      margin-bottom:16px;
+      padding:8px 12px;
       border-radius:999px;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 0 18px rgba(56,189,248,.12);
+      background:#edf4ff;
+      color:var(--primary);
       font-size:12px;
       font-weight:800;
+      letter-spacing:.6px;
       text-transform:uppercase;
-      letter-spacing:.9px;
-      color:#dbeafe;
-      margin-bottom:18px;
-      position:relative;
-      z-index:2;
     }
 
-    .profile-image{
-      width:100%;
-      height:320px;
-      object-fit:cover;
-      object-position:center;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,.12);
-      margin-bottom:18px;
-      box-shadow:
-        0 0 0 4px rgba(255,255,255,.03),
-        0 0 30px rgba(34,211,238,.12),
-        0 0 60px rgba(139,92,246,.12);
-      position:relative;
-      z-index:2;
-    }
-
-    .name{
-      font-size:36px;
+    .hero-card h1{
+      font-size:clamp(32px, 5vw, 52px);
       line-height:1.05;
-      font-weight:900;
-      letter-spacing:.2px;
-      margin-bottom:10px;
-      text-shadow:0 0 18px rgba(56,189,248,.12);
-      position:relative;
-      z-index:2;
+      letter-spacing:-1px;
+      margin-bottom:14px;
     }
 
     .role{
       display:inline-block;
-      padding:8px 14px;
+      width:max-content;
+      padding:10px 14px;
       border-radius:999px;
-      background:linear-gradient(135deg, rgba(56,189,248,.18), rgba(139,92,246,.16));
-      border:1px solid rgba(255,255,255,.08);
-      color:#e0f2fe;
-      font-size:13px;
+      background:#f3f7ff;
+      color:#2048a8;
+      font-size:14px;
       font-weight:700;
-      margin-bottom:16px;
-      position:relative;
-      z-index:2;
+      margin-bottom:18px;
     }
 
-    .intro{
-      font-size:14px;
-      line-height:1.8;
+    .hero-card p{
+      font-size:15px;
       color:var(--muted);
-      margin-bottom:18px;
-      position:relative;
-      z-index:2;
+      margin-bottom:22px;
+      max-width:640px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      border-radius:14px;
+      padding:14px 18px;
+      font-size:14px;
+      font-weight:700;
+      transition:.2s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(37,99,235,.18);
+    }
+
+    .btn-primary:hover{
+      background:var(--primary-dark);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--text);
+      border-color:var(--line);
+    }
+
+    .btn-secondary:hover{
+      background:#f8fbff;
+      border-color:#d9e2f0;
     }
 
     .stats{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:10px;
-      margin-top:8px;
-      position:relative;
-      z-index:2;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
     }
 
     .stat{
-      text-align:center;
-      padding:13px 10px;
+      background:var(--surface-2);
+      border:1px solid var(--line);
       border-radius:18px;
-      border:1px solid rgba(255,255,255,.07);
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+      padding:16px;
     }
 
     .stat strong{
       display:block;
-      font-size:16px;
+      font-size:20px;
       font-weight:800;
       margin-bottom:4px;
+      color:var(--primary);
     }
 
     .stat span{
-      font-size:12px;
-      color:rgba(255,255,255,.62);
-    }
-
-    .section{
-      margin-top:18px;
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:18px 16px 14px;
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
-      backdrop-filter:blur(15px);
-      -webkit-backdrop-filter:blur(15px);
-      box-shadow:var(--shadow);
-    }
-
-    .section-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom:14px;
-      font-size:14px;
-      font-weight:800;
-      letter-spacing:1px;
-      text-transform:uppercase;
-      color:#f8fbff;
-    }
-
-    .section-title i{
-      width:30px;
-      height:30px;
-      border-radius:11px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg, rgba(34,211,238,.18), rgba(139,92,246,.18));
-      border:1px solid rgba(255,255,255,.08);
-      color:#dbeafe;
-      box-shadow:0 0 18px rgba(56,189,248,.1);
       font-size:13px;
-    }
-
-    .about-box{
-      border-radius:22px;
-      padding:16px;
-      background:linear-gradient(135deg, rgba(34,211,238,.08), rgba(236,72,153,.06));
-      border:1px solid rgba(255,255,255,.08);
       color:var(--muted);
-      font-size:14px;
-      line-height:1.8;
+      font-weight:600;
     }
 
-    .link-card{
-      position:relative;
+    .image-card{
+      padding:14px;
       overflow:hidden;
       display:flex;
       align-items:center;
-      gap:14px;
-      text-decoration:none;
-      color:#fff;
-      padding:15px;
-      margin:12px 0;
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.03),
-        0 12px 28px rgba(0,0,0,.22);
-      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      justify-content:center;
+      min-height:100%;
     }
 
-    .link-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(120deg, transparent, rgba(255,255,255,.08), transparent);
-      transform:translateX(-120%);
-      transition:transform .6s ease;
+    .image-card img{
+      width:100%;
+      height:100%;
+      min-height:540px;
+      object-fit:cover;
+      object-position:center;
+      border-radius:20px;
+      display:block;
     }
 
-    .link-card:hover{
-      transform:translateY(-3px);
-      border-color:rgba(56,189,248,.24);
-      background:linear-gradient(135deg, rgba(34,211,238,.14), rgba(139,92,246,.12));
-      box-shadow:
-        0 0 0 1px rgba(56,189,248,.06),
-        0 18px 35px rgba(0,0,0,.28),
-        0 0 30px rgba(56,189,248,.12);
+    .main{
+      padding:8px 0 40px;
     }
 
-    .link-card:hover::before{
-      transform:translateX(120%);
+    .grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:24px;
     }
 
-    .icon-box{
-      width:52px;
-      height:52px;
-      min-width:52px;
-      border-radius:17px;
+    .stack{
+      display:grid;
+      gap:24px;
+    }
+
+    .section-card{
+      padding:26px;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:16px;
+    }
+
+    .section-icon{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      background:#eef4ff;
+      color:var(--primary);
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:19px;
-      color:#fff;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(135deg, rgba(34,211,238,.22), rgba(139,92,246,.22));
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,.04),
-        0 0 22px rgba(56,189,248,.10);
+      font-size:16px;
+      flex:none;
     }
 
-    .content{
+    .section-title{
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:-.2px;
+    }
+
+    .section-desc{
+      font-size:15px;
+      color:var(--muted);
+    }
+
+    .list{
+      display:grid;
+      gap:14px;
+      margin-top:8px;
+    }
+
+    .item-link,
+    .service-item,
+    .contact-item{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      text-decoration:none;
+      color:inherit;
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px;
+      transition:.2s ease;
+    }
+
+    .item-link:hover,
+    .contact-item:hover{
+      transform:translateY(-2px);
+      border-color:#cfe0ff;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .item-icon{
+      width:50px;
+      height:50px;
+      min-width:50px;
+      border-radius:16px;
+      background:#edf4ff;
+      color:var(--primary);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      flex:none;
+    }
+
+    .item-content{
       flex:1;
       min-width:0;
     }
 
-    .content .title{
+    .item-title{
       display:block;
       font-size:16px;
       font-weight:800;
       margin-bottom:4px;
     }
 
-    .content .sub{
+    .item-sub{
       display:block;
-      font-size:13px;
-      color:rgba(255,255,255,.68);
-      line-height:1.55;
-      word-break:break-word;
-    }
-
-    .go{
-      width:38px;
-      height:38px;
-      min-width:38px;
-      border-radius:13px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-      color:#dbeafe;
-      font-size:13px;
-    }
-
-    .service-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .service-item{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      border-radius:21px;
-      padding:14px;
-      border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-    }
-
-    .service-item i{
-      width:42px;
-      height:42px;
-      min-width:42px;
-      border-radius:14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(135deg, rgba(34,211,238,.18), rgba(245,158,11,.18));
-      border:1px solid rgba(255,255,255,.08);
-      color:#fff;
-      font-size:15px;
-      box-shadow:0 0 18px rgba(245,158,11,.08);
-    }
-
-    .service-item strong{
-      display:block;
-      font-size:15px;
-      font-weight:800;
-      margin-bottom:4px;
-    }
-
-    .service-item span{
-      display:block;
-      font-size:13px;
-      color:rgba(255,255,255,.68);
+      font-size:14px;
+      color:var(--muted);
       line-height:1.65;
     }
 
-    .footer{
-      text-align:center;
-      margin-top:18px;
-      font-size:12px;
-      color:rgba(255,255,255,.48);
-      letter-spacing:.3px;
+    .item-arrow{
+      width:38px;
+      height:38px;
+      min-width:38px;
+      border-radius:12px;
+      background:#fff;
+      border:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#6b7280;
+      margin-left:auto;
     }
 
-    @media (max-width:430px){
-      .name{
-        font-size:31px;
+    .service-item{
+      background:linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+    }
+
+    .service-item .item-icon{
+      background:#f5f8ff;
+    }
+
+    .contact-grid{
+      display:grid;
+      gap:14px;
+    }
+
+    .footer{
+      padding:0 0 34px;
+    }
+
+    .footer-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:var(--shadow-soft);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px 18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .footer-card strong{
+      color:var(--text);
+    }
+
+    @media (max-width: 920px){
+      .hero-grid,
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .image-card img{
+        min-height:380px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .topbar-inner{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .nav{
+        width:100%;
+      }
+
+      .nav a{
+        padding:8px 10px;
+      }
+
+      .hero{
+        padding-top:24px;
+      }
+
+      .hero-card,
+      .section-card{
+        padding:20px;
       }
 
       .stats{
         grid-template-columns:1fr;
       }
 
-      .profile-image{
-        height:280px;
+      .image-card img{
+        min-height:300px;
+      }
+
+      .footer-card{
+        flex-direction:column;
       }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="blur one"></div>
-    <div class="blur two"></div>
-    <div class="blur three"></div>
-
-    <section class="hero">
-      <div class="badge">
-        <i class="fa-solid fa-crown"></i>
-        Bio Landing Pro Max
-      </div>
-
-      <img class="profile-image" src="https://d2eioyamun8mp1.cloudfront.net/images/1775363259460_Tbzu3vRYNv.jpeg" alt="Tài Nguyễn">
-
-      <h1 class="name">Tài Nguyễn</h1>
-      <div class="role">Dịch vụ MXH · Quảng cáo ADS · Tài nguyên MMO</div>
-
-      <p class="intro">
-        Xin chào, mình là <strong>Tài Nguyễn</strong>. Mình chuyên cung cấp các giải pháp hỗ trợ phát triển mạng xã hội, quảng cáo (ADS) và tài nguyên MMO. Với hệ thống website và dịch vụ được tối ưu, mình hướng đến trải nghiệm nhanh – gọn – hiệu quả, giúp khách hàng tiếp cận đúng đối tượng và nâng cao hiệu suất kinh doanh online.
-      </p>
-
-      <div class="stats">
-        <div class="stat">
-          <strong>24/7</strong>
-          <span>Hỗ trợ nhanh</span>
-        </div>
-        <div class="stat">
-          <strong>ADS</strong>
-          <span>Quảng cáo đa nền tảng</span>
-        </div>
-        <div class="stat">
-          <strong>MMO</strong>
-          <span>Tài nguyên tối ưu</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">
-        <i class="fa-solid fa-circle-info"></i>
-        Giới thiệu
-      </div>
-
-      <div class="about-box">
-        Trang được xây dựng nhằm cung cấp các giải pháp toàn diện về phát triển mạng xã hội, quảng cáo ADS và tài nguyên MMO. Với định hướng tối ưu trải nghiệm và hiệu suất, hệ thống giúp khách hàng tiếp cận đúng nhu cầu, tiết kiệm thời gian và nâng cao hiệu quả trong quá trình vận hành online.
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">
-        <i class="fa-solid fa-globe"></i>
-        Website chính
-      </div>
-
-      <a class="link-card" href="https://likefb68.com" target="_blank">
-        <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
-        <div class="content">
-          <span class="title">LikeFB68.Com</span>
-          <span class="sub">Website dịch vụ mạng xã hội, hỗ trợ tăng tương tác và các tiện ích đa nền tảng.</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">
+        <div class="brand-logo">TN</div>
+        <span>Tài Nguyễn</span>
       </a>
 
-      <a class="link-card" href="https://socialpro.vn" target="_blank">
-        <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
-        <div class="content">
-          <span class="title">SocialPro.Vn</span>
-          <span class="sub">Nền tảng tài nguyên MMO, tiện ích online và hệ sinh thái hỗ trợ người dùng.</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-    </section>
-
-    <section class="section">
-      <div class="section-title">
-        <i class="fa-solid fa-gem"></i>
-        Dịch vụ nổi bật
-      </div>
-
-      <div class="service-list">
-        <div class="service-item">
-          <i class="fa-solid fa-thumbs-up"></i>
-          <div>
-            <strong>Dịch vụ mạng xã hội</strong>
-            <span>Hỗ trợ tăng tương tác, like, follow, comment, view và nhiều hạng mục khác trên nhiều nền tảng phổ biến, giúp tối ưu độ phủ và hiệu quả hiển thị.</span>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <i class="fa-solid fa-bullhorn"></i>
-          <div>
-            <strong>Quảng cáo ADS</strong>
-            <span>Hỗ trợ triển khai quảng cáo, tối ưu hiển thị, tiếp cận khách hàng mục tiêu và xây dựng hiệu quả nhận diện thương hiệu theo từng nhu cầu cụ thể.</span>
-          </div>
-        </div>
-
-        <div class="service-item">
-          <i class="fa-solid fa-box-open"></i>
-          <div>
-            <strong>Tài nguyên MMO</strong>
-            <span>Cung cấp và chia sẻ các tiện ích, công cụ, tài nguyên hỗ trợ học tập, làm việc và phát triển hệ sinh thái online một cách nhanh chóng, thuận tiện.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-title">
-        <i class="fa-solid fa-address-book"></i>
-        Liên hệ cá nhân
-      </div>
-
-      <a class="link-card" href="https://www.facebook.com/share/14WpTMHwqg7/?mibextid=wwXIfr" target="_blank">
-        <div class="icon-box"><i class="fa-brands fa-facebook-f"></i></div>
-        <div class="content">
-          <span class="title">Facebook</span>
-          <span class="sub">Kết nối trực tiếp qua trang cá nhân Facebook để trao đổi và cập nhật thông tin nhanh chóng.</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-      <a class="link-card" href="https://t.me/blackkk8888" target="_blank">
-        <div class="icon-box"><i class="fa-brands fa-telegram"></i></div>
-        <div class="content">
-          <span class="title">Telegram</span>
-          <span class="sub">@blackkk8888 — kênh liên hệ nhanh, thuận tiện cho trao đổi công việc và hỗ trợ trực tiếp.</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-      <a class="link-card" href="https://zalo.me/0329713912" target="_blank">
-        <div class="icon-box"><i class="fa-solid fa-comments"></i></div>
-        <div class="content">
-          <span class="title">Zalo</span>
-          <span class="sub">0329713912 — kết nối nhanh để trao đổi nhu cầu, nhận hỗ trợ và tư vấn trực tiếp.</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-      </a>
-
-      <a class="link-card" href="tel:0329713912">
-        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-        <div class="content">
-          <span class="title">Số điện thoại</span>
-          <span class="sub">0329713912 — liên hệ trực tiếp khi cần hỗ trợ nhanh hoặc trao đổi công việc.</span>
-        </div>
-        <div class="go"><i class="fa-solid fa-phone"></i></div>
-      </a>
-    </section>
-
-    <div class="footer">
-      © Tài Nguyễn · Bio Landing Pro Max
+      <nav class="nav">
+        <a href="#gioi-thieu">Giới thiệu</a>
+        <a href="#website">Website</a>
+        <a href="#dich-vu">Dịch vụ</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
     </div>
-  </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="eyebrow">
+          <i class="fa-solid fa-briefcase"></i>
+          Landing Page Chuyên Nghiệp
+        </div>
+
+        <h1>Tài Nguyễn</h1>
+        <div class="role">Dịch vụ MXH · Quảng cáo ADS · Tài nguyên MMO</div>
+
+        <p>
+          Xin chào, mình là Tài Nguyễn. Mình chuyên cung cấp các giải pháp hỗ trợ phát triển mạng xã hội, quảng cáo (ADS) và tài nguyên MMO. Với hệ thống website và dịch vụ được tối ưu, mình hướng đến trải nghiệm nhanh – gọn – hiệu quả, giúp khách hàng tiếp cận đúng đối tượng và nâng cao hiệu suất kinh doanh online.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#website">
+            <i class="fa-solid fa-globe"></i>
+            Xem website chính
+          </a>
+          <a class="btn btn-secondary" href="#lien-he">
+            <i class="fa-solid fa-address-book"></i>
+            Liên hệ ngay
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Hỗ trợ nhanh</span>
+          </div>
+          <div class="stat">
+            <strong>ADS</strong>
+            <span>Giải pháp quảng cáo</span>
+          </div>
+          <div class="stat">
+            <strong>MXH</strong>
+            <span>Tăng trưởng hiệu quả</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-card">
+        <img src="https://d2eioyamun8mp1.cloudfront.net/images/1775363259460_Tbzu3vRYNv.jpeg" alt="Tài Nguyễn">
+      </div>
+    </div>
+  </section>
+
+  <main class="main">
+    <div class="container grid">
+      <div class="stack">
+        <section class="section-card" id="gioi-thieu">
+          <div class="section-head">
+            <div class="section-icon">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div>
+              <div class="section-title">Giới thiệu</div>
+              <div class="section-desc">Thông tin tổng quan về định hướng và hệ thống dịch vụ.</div>
+            </div>
+          </div>
+
+          <div class="section-desc">
+            Trang được xây dựng nhằm cung cấp các giải pháp toàn diện về phát triển mạng xã hội, quảng cáo ADS và tài nguyên MMO. Với định hướng tối ưu trải nghiệm và hiệu suất, hệ thống giúp khách hàng tiếp cận đúng nhu cầu, tiết kiệm thời gian và nâng cao hiệu quả trong quá trình vận hành online.
+          </div>
+        </section>
+
+        <section class="section-card" id="website">
+          <div class="section-head">
+            <div class="section-icon">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div>
+              <div class="section-title">Website chính</div>
+              <div class="section-desc">Các nền tảng chính để truy cập dịch vụ và tài nguyên.</div>
+            </div>
+          </div>
+
+          <div class="list">
+            <a class="item-link" href="https://likefb68.com" target="_blank">
+              <div class="item-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">LikeFB68</span>
+                <span class="item-sub">Website dịch vụ mạng xã hội, hỗ trợ tăng tương tác và các tiện ích đa nền tảng.</span>
+              </div>
+              <div class="item-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+
+            <a class="item-link" href="https://socialpro.vn" target="_blank">
+              <div class="item-icon">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">SocialPro</span>
+                <span class="item-sub">Nền tảng tài nguyên MMO, tiện ích online và hệ sinh thái hỗ trợ người dùng.</span>
+              </div>
+              <div class="item-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="section-card" id="dich-vu">
+          <div class="section-head">
+            <div class="section-icon">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <div>
+              <div class="section-title">Dịch vụ nổi bật</div>
+              <div class="section-desc">Những nhóm giải pháp trọng tâm đang cung cấp.</div>
+            </div>
+          </div>
+
+          <div class="list">
+            <div class="service-item">
+              <div class="item-icon">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">Dịch vụ mạng xã hội</span>
+                <span class="item-sub">Hỗ trợ tăng tương tác, like, follow, comment, view và nhiều hạng mục khác trên nhiều nền tảng phổ biến, giúp tối ưu độ phủ và hiệu quả hiển thị.</span>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="item-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">Quảng cáo ADS</span>
+                <span class="item-sub">Hỗ trợ triển khai quảng cáo, tối ưu hiển thị, tiếp cận khách hàng mục tiêu và xây dựng hiệu quả nhận diện thương hiệu theo từng nhu cầu cụ thể.</span>
+              </div>
+            </div>
+
+            <div class="service-item">
+              <div class="item-icon">
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">Tài nguyên MMO</span>
+                <span class="item-sub">Cung cấp và chia sẻ các tiện ích, công cụ, tài nguyên hỗ trợ học tập, làm việc và phát triển hệ sinh thái online một cách nhanh chóng, thuận tiện.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card" id="lien-he">
+          <div class="section-head">
+            <div class="section-icon">
+              <i class="fa-solid fa-address-book"></i>
+            </div>
+            <div>
+              <div class="section-title">Liên hệ cá nhân</div>
+              <div class="section-desc">Kết nối nhanh qua các kênh liên hệ chính.</div>
+            </div>
+          </div>
+
+          <div class="contact-grid">
+            <a class="contact-item" href="https://www.facebook.com/share/14WpTMHwqg7/?mibextid=wwXIfr" target="_blank">
+              <div class="item-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">Facebook</span>
+                <span class="item-sub">Kết nối trực tiếp qua trang cá nhân Facebook để trao đổi và cập nhật thông tin nhanh chóng.</span>
+              </div>
+              <div class="item-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+
+            <a class="contact-item" href="https://t.me/blackkk8888" target="_blank">
+              <div class="item-icon">
+                <i class="fa-brands fa-telegram"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">Telegram</span>
+                <span class="item-sub">@blackkk8888 — kênh liên hệ nhanh, thuận tiện cho trao đổi công việc và hỗ trợ trực tiếp.</span>
+              </div>
+              <div class="item-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+
+            <a class="contact-item" href="https://zalo.me/0329713912" target="_blank">
+              <div class="item-icon">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">Zalo</span>
+                <span class="item-sub">0329713912 — kết nối nhanh để trao đổi nhu cầu, nhận hỗ trợ và tư vấn trực tiếp.</span>
+              </div>
+              <div class="item-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </div>
+            </a>
+
+            <a class="contact-item" href="tel:0329713912">
+              <div class="item-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="item-content">
+                <span class="item-title">Số điện thoại</span>
+                <span class="item-sub">0329713912 — liên hệ trực tiếp khi cần hỗ trợ nhanh hoặc trao đổi công việc.</span>
+              </div>
+              <div class="item-arrow">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <div><strong>Tài Nguyễn</strong> · Giải pháp MXH, ADS & MMO</div>
+        <div>© Tài Nguyễn · Landing Page Chuyên Nghiệp</div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
